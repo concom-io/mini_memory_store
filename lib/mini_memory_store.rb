@@ -22,7 +22,7 @@ class MiniMemoryStore
   def cache(&block)
     value = get
     if value.nil?
-      value = block.call
+      value = block.call(@value)
       set(value)
       value
     else
